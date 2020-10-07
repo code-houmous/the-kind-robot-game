@@ -39,33 +39,33 @@ Animates the sprite
 """
 func animate(linear_velocity: Vector3, orientation: Vector3):
     if (linear_velocity.z < 0):
-        $Sprite.play("walk_back")
+        $Sprites/Animation.play("walk_back")
         return
     if (linear_velocity.z > 0):
-        $Sprite.play("walk_front")
+        $Sprites/Animation.play("walk_front")
         return
     if (linear_velocity.x < 0):
-        $Sprite.play("walk_left")
+        $Sprites/Animation.play("walk_left")
         return
     if (linear_velocity.x > 0):
-        $Sprite.play("walk_right")
+        $Sprites/Animation.play("walk_right")
         return
 
     # no movement : idle animation
     if (orientation.z < 0):
-        $Sprite.play("idle_back")
+        $Sprites/Animation.play("idle_back")
         return
     if (orientation.z > 0):
-        $Sprite.play("idle_front")
+        $Sprites/Animation.play("idle_front")
         return
     if (orientation.x == -1):
-        $Sprite.play("idle_left")
+        $Sprites/Animation.play("idle_left")
         return
     if (orientation.x == 1):
-        $Sprite.play("idle_right")
+        $Sprites/Animation.play("idle_right")
         return
 
-    $Sprite.play("idle_front")
+    $Sprites/Animation.play("idle_front")
 
 func accelerate(direction: Vector3, coefficient: float) -> float:
     if (direction.x != 0 or direction.z != 0):

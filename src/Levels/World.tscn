@@ -9,11 +9,11 @@
 
 [node name="Floor" parent="." instance=ExtResource( 2 )]
 
-[node name="Robot" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.176, 1 )
-
 [node name="Pressing" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.454877, 0, -0.890554, 0, 1, 0, 0.890554, 0, -0.454877, 1.75197, 0, 0 )
 
 [node name="Hotel3D" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.439626, 0, -0.898181, 0, 1, 0, 0.898181, 0, 0.439626, -0.339056, 0, 0 )
+
+[node name="Robot2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, 1.35925 )

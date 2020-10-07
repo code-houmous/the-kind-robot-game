@@ -1,113 +1,172 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://sprites/robot/basics/idle6.png" type="Texture" id=1]
-[ext_resource path="res://sprites/robot/basics/idle5.png" type="Texture" id=2]
-[ext_resource path="res://sprites/robot/basics/idle4.png" type="Texture" id=3]
-[ext_resource path="res://sprites/robot/basics/idle3.png" type="Texture" id=4]
-[ext_resource path="res://sprites/robot/basics/idle2.png" type="Texture" id=5]
-[ext_resource path="res://sprites/robot/basics/idle1.png" type="Texture" id=6]
-[ext_resource path="res://sprites/robot/basics/left5.png" type="Texture" id=7]
-[ext_resource path="res://sprites/robot/basics/left6.png" type="Texture" id=8]
-[ext_resource path="res://sprites/robot/basics/left2.png" type="Texture" id=9]
-[ext_resource path="res://sprites/robot/basics/right2.png" type="Texture" id=10]
-[ext_resource path="res://sprites/robot/basics/right3.png" type="Texture" id=11]
-[ext_resource path="res://sprites/robot/basics/left3.png" type="Texture" id=12]
-[ext_resource path="res://sprites/robot/basics/left1.png" type="Texture" id=13]
-[ext_resource path="res://sprites/robot/basics/right4.png" type="Texture" id=14]
-[ext_resource path="res://sprites/robot/basics/right6.png" type="Texture" id=15]
-[ext_resource path="res://sprites/robot/basics/right5.png" type="Texture" id=16]
-[ext_resource path="res://sprites/robot/basics/right1.png" type="Texture" id=17]
-[ext_resource path="res://sprites/robot/basics/left4.png" type="Texture" id=18]
-[ext_resource path="res://sprites/robot/basics/front6.png" type="Texture" id=19]
-[ext_resource path="res://sprites/robot/basics/back1.png" type="Texture" id=20]
-[ext_resource path="res://sprites/robot/basics/front5.png" type="Texture" id=21]
-[ext_resource path="res://sprites/robot/basics/front2.png" type="Texture" id=22]
-[ext_resource path="res://sprites/robot/basics/front1.png" type="Texture" id=23]
-[ext_resource path="res://sprites/robot/basics/back3.png" type="Texture" id=24]
-[ext_resource path="res://sprites/robot/basics/back2.png" type="Texture" id=25]
-[ext_resource path="res://sprites/robot/basics/back5.png" type="Texture" id=26]
-[ext_resource path="res://sprites/robot/basics/front4.png" type="Texture" id=27]
-[ext_resource path="res://sprites/robot/basics/front3.png" type="Texture" id=28]
-[ext_resource path="res://sprites/robot/basics/back4.png" type="Texture" id=29]
-[ext_resource path="res://sprites/robot/basics/back6.png" type="Texture" id=30]
-[ext_resource path="res://sprites/robot/basics/idle_back3.png" type="Texture" id=31]
-[ext_resource path="res://sprites/robot/basics/idle_back1.png" type="Texture" id=32]
-[ext_resource path="res://sprites/robot/basics/idle_back4.png" type="Texture" id=33]
-[ext_resource path="res://sprites/robot/basics/idle_back5.png" type="Texture" id=34]
-[ext_resource path="res://sprites/robot/basics/idle_back2.png" type="Texture" id=35]
-[ext_resource path="res://sprites/robot/basics/idle_back6.png" type="Texture" id=36]
-[ext_resource path="res://sprites/robot/basics/idle_left4.png" type="Texture" id=37]
-[ext_resource path="res://sprites/robot/basics/idle_right2.png" type="Texture" id=38]
-[ext_resource path="res://sprites/robot/basics/idle_left1.png" type="Texture" id=39]
-[ext_resource path="res://sprites/robot/basics/idle_left6.png" type="Texture" id=40]
-[ext_resource path="res://sprites/robot/basics/idle_left5.png" type="Texture" id=41]
-[ext_resource path="res://sprites/robot/basics/idle_left3.png" type="Texture" id=42]
-[ext_resource path="res://sprites/robot/basics/idle_left2.png" type="Texture" id=43]
-[ext_resource path="res://sprites/robot/basics/idle_right3.png" type="Texture" id=44]
-[ext_resource path="res://sprites/robot/basics/idle_right4.png" type="Texture" id=45]
-[ext_resource path="res://sprites/robot/basics/idle_right1.png" type="Texture" id=46]
-[ext_resource path="res://sprites/robot/basics/idle_right5.png" type="Texture" id=47]
-[ext_resource path="res://sprites/robot/basics/idle_right6.png" type="Texture" id=48]
-[ext_resource path="res://src/Robot/Robot.gd" type="Script" id=49]
+[ext_resource path="res://sprites/robot/basics/robot_basics.png" type="Texture" id=1]
+[ext_resource path="res://src/Robot/Robot.gd" type="Script" id=2]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "walk_left",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "walk_right",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 46 ), ExtResource( 38 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ), ExtResource( 48 ) ],
-"loop": true,
-"name": "idle_right",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 32 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 36 ) ],
-"loop": true,
-"name": "idle_back",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 29 ), ExtResource( 26 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "walk_back",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 40 ) ],
-"loop": true,
-"name": "idle_left",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "idle_front",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 22 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "walk_front",
-"speed": 13.0
-} ]
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.105558, 0.166166, 0.0449472 )
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.0926594, 0.204843, 0.025985 )
+[sub_resource type="Animation" id=2]
+resource_name = "idle_back"
+length = 2.0
+loop = true
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.333333, 0.666667, 1, 1.33333, 1.66667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 42, 43, 44, 45, 46, 47 ]
+}
 
-[node name="Robot" type="KinematicBody"]
+[sub_resource type="Animation" id=3]
+resource_name = "idle_front"
+length = 1.8
+loop = true
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 2.1
+loop = true
+step = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle_right"
+length = 2.0
+loop = true
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.333333, 0.666667, 1, 1.33333, 1.66667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 31, 32, 33, 34, 35, 33 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "walk_back"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 36, 37, 38, 39, 40, 41 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15, 16, 17 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Robot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 28, 29 ]
+}
+
+[node name="Robot2" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, 0 )
 collision_mask = 2
-script = ExtResource( 49 )
-
-[node name="Sprite" type="AnimatedSprite3D" parent="."]
-frames = SubResource( 1 )
-animation = "idle_front"
-
-[node name="Camera" type="Camera" parent="Sprite"]
-transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.704, 1.934 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0374629, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
+
+[node name="Sprites" type="Spatial" parent="."]
+
+[node name="Robot" type="Sprite3D" parent="Sprites"]
+texture = ExtResource( 1 )
+vframes = 8
+hframes = 6
+frame = 18
+
+[node name="Camera" type="Camera" parent="Sprites/Robot"]
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.7, 2 )
+
+[node name="Animation" type="AnimationPlayer" parent="Sprites"]
+anims/idle_back = SubResource( 2 )
+anims/idle_front = SubResource( 3 )
+anims/idle_left = SubResource( 4 )
+anims/idle_right = SubResource( 5 )
+anims/walk_back = SubResource( 6 )
+anims/walk_front = SubResource( 7 )
+anims/walk_left = SubResource( 8 )
+anims/walk_right = SubResource( 9 )
