@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="robot-2d-in-3d-world"
+run/main_scene="res://src/Levels/World.tscn"
+config/icon="res://icon.png"
+
+[layer_names]
+
+3d_physics/layer_1="robot"
+3d_physics/layer_2="world"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
