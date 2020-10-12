@@ -21,8 +21,11 @@ config/icon="res://icon.png"
 
 [layer_names]
 
+3d_render/layer_1="visibles"
 3d_physics/layer_1="robot"
+3d_render/layer_2="unvisibles"
 3d_physics/layer_2="world"
+3d_physics/layer_3="people"
 
 [rendering]
 

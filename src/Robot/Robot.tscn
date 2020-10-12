@@ -156,7 +156,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 vframes = 8
 hframes = 6
-frame = 18
+frame = 42
 
 [node name="Camera" type="Camera" parent="Sprites/Robot"]
 transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.7, 2 )

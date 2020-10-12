@@ -1,7 +1,5 @@
 extends "../Parents/Body.gd"
 
-var acceleration: float = 0.0
-
 func _physics_process(delta):
     var direction: Vector3 = Vector3(0, 0, 0)
 
@@ -26,7 +24,7 @@ func _physics_process(delta):
 
     acceleration = accelerate(direction, acceleration)
 
-    velocity = orientation * acceleration * speed * delta
+    move(delta)
 
     velocity = gravity(velocity, weight)
 
@@ -67,12 +65,3 @@ func animate(linear_velocity: Vector3, orientation: Vector3):
 
     $Sprites/Animation.play("idle_front")
 
-func accelerate(direction: Vector3, coefficient: float) -> float:
-    if (direction.x != 0 or direction.z != 0):
-        coefficient += 0.05
-
-        return min(coefficient, 1.0)
-
-    coefficient -= 0.05
-
-    return max(0.0, coefficient)
