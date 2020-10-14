@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "AI",
+"language": "GDScript",
+"path": "res://src/scripts/Parents/AI.gd"
+}, {
+"base": "Camera",
+"class": "MainCamera",
+"language": "GDScript",
+"path": "res://src/scripts/Scenography/MainCamera.gd"
+}, {
+"base": "KinematicBody",
+"class": "Robot",
+"language": "GDScript",
+"path": "res://src/scripts/Robot.gd"
+} ]
 _global_script_class_icons={
-
+"AI": "",
+"MainCamera": "",
+"Robot": ""
 }
 
 [application]

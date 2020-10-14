@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/souffle_roof.png-9ff92e4467ea5ee6d0be98e6060d7828.stex"
+path="res://.import/books.png-73963abcc1457f0ab7d0c8259efdff7a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/map/buildings/lesouffle/souffle_roof.png"
-dest_files=[ "res://.import/souffle_roof.png-9ff92e4467ea5ee6d0be98e6060d7828.stex" ]
+source_file="res://sprites/map/buildings/books.png"
+dest_files=[ "res://.import/books.png-73963abcc1457f0ab7d0c8259efdff7a.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

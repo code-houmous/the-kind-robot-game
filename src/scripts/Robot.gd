@@ -1,4 +1,5 @@
-extends "../Parents/Body.gd"
+extends "res://src/scripts/Parents/Body.gd"
+class_name Robot
 
 func _physics_process(delta):
     var direction: Vector3 = Vector3(0, 0, 0)
@@ -19,6 +20,9 @@ func _physics_process(delta):
         direction.z += 1
         orientation.z = direction.z
         orientation.x = direction.x
+
+    if direction.x != 0 and direction.z != 0:
+        orientation *= 0.5
 
     direction = direction.normalized()
 
