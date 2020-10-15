@@ -1,6 +1,5 @@
 extends Spatial
 
-onready var scenography = $Scenography
 onready var camera = $Scenography/Camera
 
 onready var depressed = $Navigation/Depressed
@@ -14,9 +13,5 @@ and make an AI going there. Then it will stay there for a time, and then it will
 spot
 """
 func _ready():
-    scenography()
     depressed.navigation = navigation
     depressed.set_target(area_hotel_spots[0])
-
-func scenography():
-    scenography.camera = camera

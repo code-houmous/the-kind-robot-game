@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Robot/Robot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Map/Floor.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://src/Map/Buildings/LeSouffle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Map/Buildings/Bookshop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/scripts/Scenography/MainCamera.gd" type="Script" id=9]
-[ext_resource path="res://src/scripts/Scenography/Scenography.gd" type="Script" id=10]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -54,6 +53,11 @@ transform = Transform( 2.73189, 0, 0, 0, 0, 0, 0, 0, 1.71892, -2.42254, 0, 1.338
 [node name="Robot" parent="Navigation" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300475, 0.17, 2.15495 )
 
+[node name="MainCamera" type="Camera" parent="Navigation/Robot"]
+transform = Transform( 1, 0, 0, 0, 0.940514, 0.339756, 0, -0.339756, 0.940514, 0, 0, 0 )
+size = 2.0
+script = ExtResource( 9 )
+
 [node name="Depressed" parent="Navigation" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.400037, 0.22, 1.90896 )
 
@@ -93,28 +97,31 @@ transform = Transform( -0.324545, 0, -0.94587, 0, 1, 0, 0.94587, 0, -0.324545, -
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32872, 0, 2.55084 )
 
 [node name="Scenography" type="Node" parent="."]
-script = ExtResource( 10 )
-
-[node name="MainCamera" type="Camera" parent="Scenography"]
-transform = Transform( 1, 0, 0, 0, 0.940514, 0.339756, 0, -0.339756, 0.940514, 0.655764, 0.712909, 3.91938 )
-size = 2.0
-script = ExtResource( 9 )
 
 [node name="Areas" type="Node" parent="Scenography"]
 
 [node name="Hotel" type="Area" parent="Scenography/Areas"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.513961, 0, 1.81095 )
+transform = Transform( 0.492214, 0, 0, 0, 1, 0, 0, 0, 3.45201, -0.346243, 0, 2.37946 )
 collision_layer = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Scenography/Areas/Hotel"]
 transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 7 )
 
+[node name="Books" type="Area" parent="Scenography/Areas"]
+transform = Transform( 0.595871, 0, 0, 0, 1, 0, 0, 0, 1, 2.31939, 0, 3.82265 )
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Scenography/Areas/Books"]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
 [node name="Marcys" type="Area" parent="Scenography/Areas"]
-transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 1, 1.30036, 0, 2.29637 )
+transform = Transform( 0.717867, 0, 0, 0, 0.2, 0, 0, 0, 2.2065, 0.965747, 0, 2.29637 )
 collision_layer = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Scenography/Areas/Marcys"]
 shape = SubResource( 8 )
-[connection signal="body_entered" from="Scenography/Areas/Hotel" to="Scenography/MainCamera" method="_on_Hotel_body_entered"]
-[connection signal="body_entered" from="Scenography/Areas/Marcys" to="Scenography/MainCamera" method="_on_Marcys_body_entered"]
+[connection signal="body_entered" from="Scenography/Areas/Hotel" to="Navigation/Robot/MainCamera" method="_on_Hotel_body_entered"]
+[connection signal="body_entered" from="Scenography/Areas/Books" to="Navigation/Robot/MainCamera" method="_on_Books_body_entered"]
+[connection signal="body_entered" from="Scenography/Areas/Marcys" to="Navigation/Robot/MainCamera" method="_on_Marcys_body_entered"]
