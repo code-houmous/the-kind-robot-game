@@ -144,5 +144,12 @@ func _on_Books_body_entered(robot: Robot):
         Vector3(3, 10, 0)
     )
 
+func _on_BigBuilding_body_entered(robot: Robot):
+    if not robot:
+        return
+    set_target(
+        Vector3(-0.2, 0.3, 1.7),
+        Vector3(13.4, -10.62, 1.135)
+    )
 
 

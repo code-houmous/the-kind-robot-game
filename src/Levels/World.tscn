@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/Robot/Robot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Map/Floor.tscn" type="PackedScene" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://src/Map/Buildings/LeSouffle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Map/Buildings/Bookshop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/scripts/Scenography/MainCamera.gd" type="Script" id=9]
+[ext_resource path="res://src/Map/Buildings/BigBuilding.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Map/Buildings/Lambdas/LambdaBuilding1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Map/Buildings/Lambdas/LambdaBuilding2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Map/Buildings/Lambdas/LambdaBuilding3.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -85,7 +89,7 @@ shape = SubResource( 6 )
 [node name="HotelArea" type="Node" parent="Buildings"]
 
 [node name="LeSouffle" parent="Buildings/HotelArea" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08482, 0.431363, 0.791704 )
+transform = Transform( 0.970473, 0, 0.241211, 0, 1, 0, -0.241211, 0, 0.970473, -2.42314, 0.431363, -1.86468 )
 
 [node name="Pressing" parent="Buildings/HotelArea" instance=ExtResource( 4 )]
 transform = Transform( -0.323917, 0, -0.946085, 0, 1, 0, 0.946085, 0, -0.323917, 1.29784, 0, 0.979435 )
@@ -96,6 +100,22 @@ transform = Transform( -0.324545, 0, -0.94587, 0, 1, 0, 0.94587, 0, -0.324545, -
 [node name="Bookshop" parent="Buildings/HotelArea" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32872, 0, 2.55084 )
 
+[node name="BigBuildingArea" type="Node" parent="Buildings"]
+
+[node name="BigBuilding" parent="Buildings/BigBuildingArea" instance=ExtResource( 10 )]
+transform = Transform( 0.0152709, 0, -0.999883, 0, 1, 0, 0.999883, 0, 0.0152709, 1.65967, 1.18564, -2.93439 )
+
+[node name="Lambdas" type="Node" parent="Buildings"]
+
+[node name="LambdaBuilding1" parent="Buildings/Lambdas" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46915, 0.850764, -1.09923 )
+
+[node name="LambdaBuilding2" parent="Buildings/Lambdas" instance=ExtResource( 12 )]
+transform = Transform( 0.115821, 0, -0.99327, 0, 1, 0, 0.99327, 0, 0.115821, -6.32007, 0.848924, 1.14688 )
+
+[node name="LambdaBuilding3" parent="Buildings/Lambdas" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45112, 0.850056, -0.00673231 )
+
 [node name="Scenography" type="Node" parent="."]
 
 [node name="Areas" type="Node" parent="Scenography"]
@@ -105,6 +125,14 @@ transform = Transform( 0.492214, 0, 0, 0, 1, 0, 0, 0, 3.45201, -0.346243, 0, 2.3
 collision_layer = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Scenography/Areas/Hotel"]
+transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="BigBuilding" type="Area" parent="Scenography/Areas"]
+transform = Transform( 3.03348, 0, 0, 0, 1, 0, 0, 0, 1.32491, 1.67369, 0, -1.43556 )
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Scenography/Areas/BigBuilding"]
 transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 7 )
 
@@ -123,5 +151,6 @@ collision_layer = 0
 [node name="CollisionShape" type="CollisionShape" parent="Scenography/Areas/Marcys"]
 shape = SubResource( 8 )
 [connection signal="body_entered" from="Scenography/Areas/Hotel" to="Navigation/Robot/MainCamera" method="_on_Hotel_body_entered"]
+[connection signal="body_entered" from="Scenography/Areas/BigBuilding" to="Navigation/Robot/MainCamera" method="_on_BigBuilding_body_entered"]
 [connection signal="body_entered" from="Scenography/Areas/Books" to="Navigation/Robot/MainCamera" method="_on_Books_body_entered"]
 [connection signal="body_entered" from="Scenography/Areas/Marcys" to="Navigation/Robot/MainCamera" method="_on_Marcys_body_entered"]
